@@ -9,3 +9,14 @@ function getComputerChoice(arr){
 const array =['rock','paper','scissor'];
 const result = getComputerChoice(array);
 console.log(result);
+
+// getting input from user
+const userInput = prompt(`write one of them , rock ,paper,scissor`,'');
+
+function getHumanChoice(Input){
+return userInput;
+}
+let showInput = getHumanChoice(userInput);
+console.log(showInput);
+
+

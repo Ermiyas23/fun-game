@@ -8,7 +8,7 @@ function getComputerChoice(array){
 }
 const array =['rock','paper','scissor'];
 const result = getComputerChoice(array);
-console.log(result);
+// console.log(result);
 
 // getting input from user
 const userInput = prompt(`write one of them , rock ,paper,scissor`);
@@ -29,37 +29,61 @@ function playRound(computerChoice,humanChoice){
     if (computerChoice === 'rock'){
         if (humanChoice == 'paper'){
             console.log(`your choice is ${humanChoice} and you win`);
-            humanScore ++;
+           return humanScore +=1;
 
         }else if (humanChoice == 'scissor'){
             console.log(`your choice is ${humanChoice} and you loss`);
-            computerScore ++;
+           return computerScore += 1;
         }
         else {console.log('try again')}
     }
     else if (computerChoice === 'paper'){
         if (humanChoice == 'rock'){
             console.log(`your choice is ${humanChoice} and you win`);
-            humanScore ++;
+           return humanScore +=1;
         }else if (humanChoice == 'scissor'){
             console.log(`your choice is ${humanChoice} and you loss`);
-            computerScore ++;
+           return computerScore +=1;
         }else{console.log('try again')}
  
     }
     else if (computerChoice === 'scissor'){
         if (humanChoice == 'paper'){
             console.log(`your choice is ${humanChoice} and you loss`);
-            humanScore ++;
+          return  humanScore +=1;
         }else if (humanChoice == 'rock'){
             console.log(`your choice is ${humanChoice} and you win`);
-            computerScore ++;
+           return computerScore +=1;
         }else {console.log('try again')}
     }
 
 }
 
-const computerSelection  = getComputerChoice(array);
-const humanSelection  = getHumanChoice(userInput);
+// create function to play five times
 
-playRound(computerSelection,humanSelection);
+    function playGame(){
+        const computerSelection  = getComputerChoice(array);
+        const humanSelection  = getHumanChoice(userInput);
+        playRound(computerSelection,humanSelection);
+        
+    
+    }  
+for(let i =1; i <= 5; i++){
+    playGame();
+
+}
+// create a function that show the winner
+let winnerScore = playRound();
+function winner(winnerScore){
+if (humanScore > computerScore){
+    console.log(`the winner is human score`)
+}else if (humanScore < computerScore){
+    console.log(`the winner is computer score`)
+}else {
+    console.log(`try again`)
+}
+}
+
+winner();
+
+

@@ -71,7 +71,7 @@ function winner(humanScore,computerScore){
 if(humanScore > computerScore){
 return "You Win!";
 }else if(computerScore > humanScore ){
-  return "Computer Wins!";
+return "Computer Wins!";
 }else{
   return "It's a tie!";
 }
